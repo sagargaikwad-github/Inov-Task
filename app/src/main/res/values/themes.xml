@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.InovTask" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+
+        <item name="android:statusBarColor">@color/white</item>
+
+    </style>
+
+    <style name="Theme.InovTask" parent="Base.Theme.InovTask" />
+
+<!--    <style name="buttonStyle" parent="Base.Theme.InovTask">-->
+<!--        <item name="fontFamily">@font/blooming_sans</item>-->
+<!--        <item name="textAllCaps">false</item>-->
+<!--        <item name="android:textSize">18sp</item>-->
+<!--    </style>-->
+</resources>
