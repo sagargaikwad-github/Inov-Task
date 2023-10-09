@@ -7,11 +7,10 @@
         android:layout_height="?attr/actionBarSize">
 
         <ImageView
-
             android:id="@+id/actionBar_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="20dp"
             android:padding="2dp"
             android:src="@drawable/ic_nav_back"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -19,11 +18,11 @@
             app:layout_constraintTop_toTopOf="parent"></ImageView>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/actionBarTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Once Collection Weekly"
+            android:text="Intent Title Here"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -69,5 +68,11 @@
 
 
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/light_grey"
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

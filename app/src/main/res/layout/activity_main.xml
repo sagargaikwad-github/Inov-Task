@@ -6,215 +6,310 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".view.MainActivity">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
 
+        <include
+            android:id="@+id/toolbar_layout"
+            layout="@layout/custom_action_bar"
+            app:layout_constraintBottom_toTopOf="@+id/constraint2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <include
-                android:id="@+id/toolbar_layout"
-                layout="@layout/custom_action_bar" />
 
-        </androidx.appcompat.widget.Toolbar>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_layout"></ProgressBar>
 
-        <ScrollView
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_layout">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                tools:context=".MainActivity">
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/viewPager2"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    android:src="@drawable/test_img"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_height="0dp">
 
-                <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
-                    android:id="@+id/viewpager_dots_indicator"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:dampingRatio="0.5"
-                    app:dotsColor="@color/black"
-                    app:dotsSize="16dp"
-                    app:dotsSpacing="2dp"
-                    app:dotsStrokeColor="@color/black"
-                    app:dotsStrokeWidth="2dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/viewPager2"
-                    app:stiffness="300" />
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPager2"
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="12dp"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/viewpager_dots_indicator">
+                    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                        android:id="@+id/viewpager_dots_indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:importantForAutofill="no"
+                        app:dampingRatio="0.5"
+                        app:dotsColor="#CA8E4F"
+                        app:dotsSize="10dp"
+                        app:dotsSpacing="2dp"
+                        app:dotsStrokeWidth="1dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/viewPager2"
+                        app:progressMode="false"
+                        app:selectedDotColor="@color/black" />
 
                     <LinearLayout
+                        android:id="@+id/linearLayout3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:weightSum="2">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="start"
-                            android:text="ANESHTHESIA"></TextView>
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="end"
-                            android:text="3.50 KWD"></TextView>
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Once Collection Weeekly" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="SKU: anthesia-once-collection-weeekly"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Color:" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="5dp">
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/viewpager_dots_indicator"
+                        app:layout_constraintVertical_bias="1.0">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="12dp"
                             android:orientation="horizontal"
-                            android:padding="10dp"
                             android:weightSum="2">
 
                             <TextView
+                                android:id="@+id/brandName"
+                                style="@style/TitleFont"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="or 4 interest-free payments\n 0.88 KWD LearnMore"
-                                android:textSize="12sp" />
+                                android:gravity="start"
+                                android:text="Brand name"
+                                android:textAllCaps="true"
+                                android:textStyle="bold"></TextView>
 
-                            <ImageView
+                            <TextView
+                                android:id="@+id/price"
+                                style="@style/TitleFont"
                                 android:layout_width="0dp"
-                                android:layout_height="24dp"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:src="@drawable/bag_icon"></ImageView>
+                                android:gravity="end"
+                                android:text="3.50 KWD"
+                                android:textStyle="bold"></TextView>
 
                         </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Quantity"></TextView>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
 
                         <TextView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_marginEnd="3dp"
-                            android:background="@color/black"
-                            android:gravity="center"
-                            android:text="-"
-                            android:textColor="@color/white" />
+                            android:id="@+id/data_name"
+                            style="@style/TitleFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Once Collection Weeekly"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
                         <TextView
-                            android:layout_width="60dp"
-                            android:layout_height="40dp"
-                            android:layout_marginEnd="3dp"
-                            android:background="@drawable/quanity_bg_box"
-                            android:gravity="center"
-                            android:text="1" />
+                            android:id="@+id/sku"
+                            style="@style/TitleFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="8dp"
+                            android:text="SKU: anthesia-once-collection-weeekly"
+                            android:textColor="@color/light_grey"
+                            android:textSize="12sp" />
 
                         <TextView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_marginEnd="3dp"
-                            android:background="@color/black"
-                            android:gravity="center"
-                            android:text="+"
-                            android:textColor="@color/white" />
+                            android:id="@+id/color_name"
+                            style="@style/TitleFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="12dp"
+                            android:text="Color:" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/color_recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"></androidx.recyclerview.widget.RecyclerView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginBottom="10dp"
+                            android:padding="1dp"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="4dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/cardview_bg"
+                                android:gravity="center"
+                                android:padding="5dp">
+
+                                <TextView
+                                    style="@style/TitleFont"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_toLeftOf="@id/brand_collab"
+                                    android:text="@string/tobby_text"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/brand_collab"
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/tobby"></ImageView>
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            style="@style/TitleFont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Quantity"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp"
+                            android:textStyle="bold"></TextView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/minusCart"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="3dp"
+                                android:background="@color/minus_cart_grey_color"
+                                android:gravity="center"
+                                android:text="-"
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:id="@+id/products_added"
+                                android:layout_width="60dp"
+                                android:layout_height="35dp"
+                                android:layout_marginEnd="3dp"
+                                android:background="@drawable/quanity_bg_box"
+                                android:gravity="center"
+                                android:text="1"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/addCart"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="3dp"
+                                android:background="@color/black"
+                                android:gravity="center"
+                                android:text="+"
+                                android:textColor="@color/white" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/relativeLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginEnd="12dp">
+
+                            <TextView
+                                style="@style/TitleFont"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:text="Product Information"
+                                android:textAllCaps="true"
+                                android:textColor="#595858"
+                                android:textStyle="bold"></TextView>
+
+                            <ImageView
+                                android:id="@+id/openCloseInformation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:padding="5dp"
+                                android:src="@drawable/ic_up"></ImageView>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/description"
+                            style="@style/TitleFont"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/relativeLayout"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="12dp"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/light_grey"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+
                     </LinearLayout>
 
-                    <RelativeLayout
-                        android:id="@+id/rr"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:text="Product Information"></TextView>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:src="@drawable/ic_up"></ImageView>
-                    </RelativeLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/rr" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
 
 
-                </LinearLayout>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -228,26 +323,31 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/addtocart_BTN"
+                style="@style/TitleFont"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:background="@drawable/button_border"
                 android:backgroundTint="@color/black"
-                android:text="Add to Bag"
+                android:text="Add to bag"
                 android:textAllCaps="false"
-                android:textColor="@color/white"></androidx.appcompat.widget.AppCompatButton>
+                android:textColor="@color/white"
+                android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/share_BTN"
+                style="@style/TitleFont"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:background="@drawable/button_border"
                 android:text="Share"
                 android:textAllCaps="false"
-                android:textColor="@color/black"></androidx.appcompat.widget.AppCompatButton>
+                android:textColor="@color/black"
+                android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
 
         </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

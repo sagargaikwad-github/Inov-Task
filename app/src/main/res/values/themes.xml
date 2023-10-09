@@ -11,9 +11,15 @@
 
     <style name="Theme.InovTask" parent="Base.Theme.InovTask" />
 
-<!--    <style name="buttonStyle" parent="Base.Theme.InovTask">-->
-<!--        <item name="fontFamily">@font/blooming_sans</item>-->
-<!--        <item name="textAllCaps">false</item>-->
-<!--        <item name="android:textSize">18sp</item>-->
-<!--    </style>-->
+    <style name="TitleFont">
+        <item name="fontFamily">"@font/andika_new_basic"</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!--    <style name="buttonStyle" parent="Base.Theme.InovTask">-->
+    <!--        <item name="fontFamily">@font/blooming_sans</item>-->
+    <!--        <item name="textAllCaps">false</item>-->
+    <!--        <item name="android:textSize">18sp</item>-->
+    <!--    </style>-->
 </resources>

@@ -3,4 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="grey">#888484</color>
+    <color name="light_grey">#B1AEAE</color>
+    <color name="minus_cart_grey_color">#5A5252</color>
+
 </resources>
